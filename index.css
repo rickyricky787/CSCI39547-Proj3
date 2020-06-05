@@ -1,0 +1,26 @@
+#container {
+  margin-top: 2vh;
+  text-align: center;
+  z-index: 20;
+}
+
+#container * {
+  width: 12%;
+  height: 5%;
+  font-size: 12px;
+  color: white;
+  border-radius: 25%/25%;
+  border: solid;
+  border-color: rgb(199, 94, 112);
+}
+
+#select-div {
+  text-align: center;
+  margin-top: 2vh;
+}
+
+#select-btn {
+  border-radius: 25%/25%;
+  border: solid;
+  border-color: rgb(199, 94, 112);
+}
