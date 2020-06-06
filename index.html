@@ -52,6 +52,7 @@
         type="button"
         class="btn btn-md"
         id="fill-all-uncolored"
+        onclick="fillU()"
       >
         Fill All Uncolored
       </button>
@@ -60,6 +61,7 @@
         type="button"
         class="btn btn-md"
         id="fill-all"
+        onclick="fill()"
       >
         Fill All
       </button>
@@ -68,6 +70,7 @@
         type="button"
         class="btn btn-md"
         id="clear"
+        onclick="clearAll()"
       >
         Clear
       </button>
@@ -78,7 +81,9 @@
         class="btn btn-md"
         id="select-btn"
       >
-        <select name="colors" id="colors">
+      Color:
+        <select onchange=selected() name="colors" id="colors">
+          <option value="white">White</option>
           <option value="red">Red</option>
           <option value="blue">Blue</option>
           <option value="green">Green</option>
