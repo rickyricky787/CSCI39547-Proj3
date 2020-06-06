@@ -154,16 +154,23 @@ function selected() {
 }
 
 function fill() {
+  //fetch grid
   var table = document.getElementById("output");
+  //iterate through the n*m grid
   for (var i = 0, row; (row = table.rows[i]); i++) {
+    //fill all [i][j] to selcted color
     for (var j = 0, col; (col = row.cells[j]); j++) {
       col.style.backgroundColor = colorSelected;
     }
   }
 }
+
 function clearAll() {
+  //fetch grid
   var table = document.getElementById("output");
+  //iterate through the n*m grid
   for (var i = 0, row; (row = table.rows[i]); i++) {
+    //set all [i][j] to original color
     for (var j = 0, col; (col = row.cells[j]); j++) {
       col.style.backgroundColor = "";
     }
@@ -171,9 +178,12 @@ function clearAll() {
 }
 
 function fillU() {
+  //fetch grid
   var table = document.getElementById("output");
+  //iterate through n*m grid
   for (var i = 0, row; (row = table.rows[i]); i++) {
     for (var j = 0, col; (col = row.cells[j]); j++) {
+      //find which ever [i][j] is uncolored and fill it with selected color
       if (col.style.backgroundColor === "") {
         col.style.backgroundColor = colorSelected;
       }
