@@ -1,26 +1,106 @@
+tr,td{
+  border:1px;
+  border-style: solid;
+}
+td{
+  height: 50px;
+  width: 50px;
+  background-color: white;
+}
+
+body {
+  color: #fff;
+  font-family: 'Lato', sans-serif;
+  background: #16BFFD;
+  background: -webkit-linear-gradient(to right, #CB3066, #16BFFD);
+  background: linear-gradient(to right, #CB3066, #16BFFD);
+}
+
+
 #container {
-  margin-top: 2vh;
-  text-align: center;
-  z-index: 20;
+margin-top: 2vh;
+text-align: center;
+z-index: 20;
 }
 
 #container * {
-  width: 12%;
-  height: 5%;
-  font-size: 12px;
-  color: white;
-  border-radius: 25%/25%;
-  border: solid;
-  border-color: rgb(199, 94, 112);
+width: 12%;
+height: 5%;
+font-size: 12px;
+color: white;
+border-radius: 25%/25%;
+border: solid;
+border-color: rgb(199, 94, 112);
 }
 
 #select-div {
-  text-align: center;
-  margin-top: 2vh;
+text-align: center;
+margin-top: 2vh;
 }
 
 #select-btn {
-  border-radius: 25%/25%;
-  border: solid;
-  border-color: rgb(199, 94, 112);
+border-radius: 25%/25%;
+border: solid;
+border-color: rgb(199, 94, 112);
+}
+
+.btn { 
+  border: none; 
+  color:#fff; 
+  margin: 10px ;
+  padding: 14px 15px;
+  color: #fff;
+  font-size: 14px;
+  font-weight: bold;
+  text-align: center; }
+
+  select {
+-webkit-appearance: none;
+-moz-appearance: none;
+-ms-appearance: none;
+appearance: none;
+outline: 0;
+box-shadow: none;
+border: 0 !important;
+background: #2c3e50;
+background-image: none;
+}
+/* Remove IE arrow */
+select::-ms-expand {
+display: none;
+}
+/* Custom Select */
+.select {
+position: relative;
+display: flex;
+width: 20em;
+height: 3em;
+line-height: 3;
+background: #2c3e50;
+overflow: hidden;
+border-radius: .25em;
+}
+select {
+flex: 1;
+padding: 0 .5em;
+color: #fff;
+cursor: pointer;
+}
+/* Arrow */
+.select::after {
+content: '\25BC';
+position: absolute;
+top: 0;
+right: 0;
+padding: 0 1em;
+background: #34495e;
+cursor: pointer;
+pointer-events: none;
+-webkit-transition: .25s all ease;
+-o-transition: .25s all ease;
+transition: .25s all ease;
+}
+/* Transition */
+.select:hover::after {
+color: #f39c12;
 }
