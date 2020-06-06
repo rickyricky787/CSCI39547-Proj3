@@ -3,26 +3,41 @@
 var numRows = 0;
 var numCols = 0;
 var colorSelected; //undefined by default;
+var isHolding = false;
 
 // Functions
 
 
 //Adds a row
 function addR() {
-    // console.log("IM in addR");
     let output = document.getElementById("output"); //get the output to append to it
     if(numRows === 0){ //create a new row with a new column
         let newRow = document.createElement("tr"); //create a column
         let newCol = document.createElement("td");
         //need to add onclick functionality
-        newCol.onclick = function (){
+        newCol.onmousedown = function (){
             this.style.backgroundColor = colorSelected;
-            };
+            isHolding = true;
+        };
+        newCol.onmouseup = function()
+        {
+            if (isHolding === true)
+            {
+                isHolding = false;
+            }
+        }
+        newCol.onmouseover = function()
+        {
+            if (isHolding === true)
+            {
+                this.style.backgroundColor = colorSelected;
+            }
+        }
         newRow.appendChild(newCol);
         output.appendChild(newRow);
         numRows++;
         numCols++;
-        // console.log("the number of rows is: ", numRows, "and cols is: ", numCols);
+
     }else{ //traverse through the number of rows
         // let allRows = document.querySelectorAll("tr");
         let newRow = document.createElement("tr"); //create a column
@@ -30,9 +45,24 @@ function addR() {
         for(let i = 0; i<numCols; i++){
             // console.log("Rorw: ", allRows[i]);
             let newCol = document.createElement("td");
-            newCol.onclick = function (){
-            this.style.backgroundColor = colorSelected;
-            };
+            newCol.onmousedown = function (){
+                this.style.backgroundColor = colorSelected;
+                isHolding = true;
+                };
+            newCol.onmouseup = function()
+            {
+                if (isHolding === true)
+                {
+                    isHolding = false;
+                }
+            }
+            newCol.onmouseover = function()
+            {
+                if (isHolding === true)
+                {
+                    this.style.backgroundColor = colorSelected;
+                }
+            }
             newRow.appendChild(newCol);
             console.log("done");
         }
@@ -48,9 +78,24 @@ function addC() {
     if(numRows === 0){ //create a new row with a new column
         let newCol = document.createElement("td"); //create a column
         let newRow = document.createElement("tr");
-        newCol.onclick = function (){
+        newCol.onmousedown = function (){
             this.style.backgroundColor = colorSelected;
+            isHolding = true;
             };
+        newCol.onmouseup = function()
+        {
+            if (isHolding === true)
+            {
+                isHolding = false;
+            }
+        }
+        newCol.onmouseover = function()
+        {
+            if (isHolding === true)
+            {
+                this.style.backgroundColor = colorSelected;
+            }
+        }
         newRow.appendChild(newCol);
         output.appendChild(newRow);
         numRows++;
@@ -61,9 +106,24 @@ function addC() {
         for(let i = 0; i<numRows; i++){
             // console.log("Rorw: ", allRows[i]);
             let newCol = document.createElement("td"); //create a column
-            newCol.onclick = function (){
-            this.style.backgroundColor = colorSelected;
-            };
+            newCol.onmousedown = function (){
+                this.style.backgroundColor = colorSelected;
+                isHolding = true;
+                };
+            newCol.onmouseup = function()
+            {
+                if (isHolding === true)
+                {
+                    isHolding = false;
+                }
+            }
+            newCol.onmouseover = function()
+            {
+                if (isHolding === true)
+                {
+                    this.style.backgroundColor = colorSelected;
+                }
+            }
             allRows[i].appendChild(newCol);
         }
         numCols++;
@@ -108,7 +168,8 @@ function removeC() {
 }
 //sets global var for selected color
 function selected(){
-    colorSelected = document.getElementById("selectedID").value;
+    colorSelected = document.getElementById("colors").value;
+    console.log(colorSelected);
 }
 
 function fill(){
